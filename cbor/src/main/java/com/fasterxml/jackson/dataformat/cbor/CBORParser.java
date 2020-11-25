@@ -756,8 +756,8 @@ public class CBORParser extends ParserMinimalBase
             
         default: // misc: tokens, floats
             if(lowBits < 20) {
-                _numTypesValid = NR_INT;
-                _numberInt = _decode8Bits();
+                this._numTypesValid = NR_INT;
+                this._numberInt = -lowBits - 1;
                 return (_currToken = JsonToken.VALUE_NUMBER_INT);
             }
             switch (lowBits) {
